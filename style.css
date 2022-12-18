@@ -57,6 +57,7 @@ header:hover{
 	list-style:none;
 	position: relative;
 	display: inline-flex;
+        cursor: grab;
 }
 
 a.nav-link{
