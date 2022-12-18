@@ -55,7 +55,7 @@ header:hover{
 
 .nav-bar{
 	list-style:none;
-	position: relative;
+	position: static;
 	display: inline-flex;
         cursor: grab;
 }
@@ -345,4 +345,3 @@ hr {
 .nav-active{
 	transform:translatex(0%);
 }
-           
