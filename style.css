@@ -76,8 +76,8 @@ a.nav-link{
 
 .nav-link:hover {
 	color: #0018ff;
-    background: var(--main-decor-color);
-    border-radius: 50px;
+        background: var(--main-decor-color);
+        border-radius: 50px;
 }
 
 /*──────────────────
