@@ -1,157 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
+    
+
+}
+body {
+    background-color: linear-gradient( #EE7752, #E73C7E, #23A6D5,#23D5AB);
 }
 
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-behavior: smooth;
-    background: black;
-    font-family:'cursive', cursive;
+
+
+html {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 a {
-  font-size: 40px;
-  color: #55c1ff;
-  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255), 0 0 0.2em blue;
-  animation: delay;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.popover {
-   display: none;
-   box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
-}
-
-.popover:target {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.popover .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 0;
-  height: 0;
-  color: #fff;
-  background-color: #191919;
-  animation: 3s grow ease forwards;
-  border-radius: 20%;
-  text-align: center;
-  outline: 8px ridge #00a9e2;border-radius: 2rem;
-}
-
-.nav_list  {
-  list-style-type: none;
-}
-
-.nav_list a {
-  text-decoration: none;
-  font-size: 35px;
-  color: #fff;
-}
-
-.nav_list_item {
-  height: 100%;
-  overflow: hidden;
-}
-
-.nav_list li {
-  padding: 15px 0;
-  text-transform: uppercase;
-  transform: translateY(200px);
-  opacity: 0;
-  animation: 2s slideUp ease forwards .5s;
-  position: relative;
-}
-
-.nav_list li::before {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 0px;
-  left: 0;
-  bottom: 10px;
-  background: #55c1ff; 
-  transition: all .5s ease;
+section {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5,#23D5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
 
 }
 
-.nav_list li:hover:before {
-      width: 100%;
+.textme {
+    border: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5rem 10rem;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-.popover p {
-  padding: 50px;
-  opacity: 0;
-  animation: 1s fadeIn ease forwards 1s;
+h1 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+h1:hover {
+    color: dodgerblue;
 }
 
-.popover .close::after {
-  right: 0;
-  top: 100px;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  display: flex;
-  z-index: 1;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
-  background-color: #55c1ff;
-  border-radius: 10%;
-  color: #fff;
-  outline: 8px ridge #00a9e2;border-radius: 2px;
-  content: "×";
-  cursor: pointer;
-  opacity: 0; 
-  animation: 1s fadeIn ease forwards .5s;
+.textme p {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+    
+
+
 }
-/* Float to the right on screens that are equal to or less than 768px wide */
-@media (max-width: 768px) {
-  .float-right-sm {
-    float: right;
+
+/*pembungkus dalam jancok */
+
+.jancok {
+    display: inline-flex;
+    letter-spacing: 5px;
+}
+/*modal*/
+
+  .wrap {
+    padding: 40px;
+    text-align: center;
   }
-}
-
-@keyframes grow {
-  100% {
-    height: 90%;
-    width: 90%;
- }
-}
-
-@keyframes fadeIn {
-100% {
-  opacity: 1;
- }
-}
-
-@keyframes slideUp {
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  .btn {
+    background: #428bca;
+    border: #357ebd solid 1px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    transition: color 0.1s ease;
+    /* top: 40em;*/
   }
+  .btn:hover {
+    background: #357ebd;
+  }
+  .btn.btn-big {
+    font-size: 18px;
+    padding: 15px 20px;
+    min-width: 100px;
+    border-radius: 20px;
+
+  }
+  .btn-close {
+    color: #aaa;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+  }
+  .btn-close:hover {
+    color: #919191;
+  }
+  .modal:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+  .modal:target:before {
+    display: block;
+  }
+  .modal:target .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    top: -1%;
+    left: 200px;
+    width: 100%;
+  }
+  .modal-dialog {
+    background: #fefefe;
+    color:#23A6D5;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    margin-left: -200px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    z-index: 11;
+    width: 360px;
+    -webkit-transform: translate(0, -500%);
+    -ms-transform: translate(0, -500%);
+    transform: translate(0, -500%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+  }
+  .modal-body {
+    padding: 20px;
+  }
+  .modal-header,
+  .modal-footer {
+    padding: 10px 20px;
+  }
+  .modal-header {
+    border-bottom: #eee solid 1px;
+  }
+  .modal-header h2 {
+    font-size: 20px;
+  }
+  .modal-footer {
+    border-top: #eee solid 1px;
+    text-align: right;
+  }
+  /*ADDED TO STOP SCROLLING TO TOP*/
+  #close {
+    display: none;
+  }
+  
+/*MODAL KEDUA FUNGSI NYA SAMA KEK MODAL SATU*/
+
+
+.wrap2 {
+    padding: 40px;
+    text-align: center;
+  }
+  .btn2 {
+    background: #428bca;
+    border: #357ebd solid 1px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    transition: color 0.1s ease;
+    /* top: 40em;*/
+  }
+  .btn2:hover {
+    background: #357ebd;
+  }
+  .btn.btn-big2 {
+    font-size: 18px;
+    padding: 15px 20px;
+    min-width: 100px;
+    border-radius: 20px;
+  }
+  .btn-close2 {
+    color: #aaa;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+  }
+  .btn-close2:hover {
+    color: #919191;
+  }
+  .modal2:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+  .modal2:target:before {
+    display: block;
+  }
+  .modal2:target .modal-dialog2 {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    top: -1%;
+    left: 200px;
+    width: 100%;
+  }
+  .modal-dialog2{
+    background: #fefefe;
+    color:#23A6D5;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    margin-left: -200px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    z-index: 11;
+    width: 360px;
+    -webkit-transform: translate(0, -500%);
+    -ms-transform: translate(0, -500%);
+    transform: translate(0, -500%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+  }
+  .modal-body2 {
+    padding: 20px;
+  }
+  .modal-header2,
+  .modal-footer2 {
+    padding: 10px 20px;
+  }
+  .modal-header2 {
+    border-bottom: #eee solid 1px;
+  }
+  .modal-header2 h2 {
+    font-size: 20px;
+  }
+  .modal-footer2 {
+    border-top: #eee solid 1px;
+    text-align: right;
+  }
+  /*ADDED TO STOP SCROLLING TO TOP*/
+  #close2 {
+    display: none;
+  }
+
+@keyframes change {
+    
+0% {
+    background-position: 0 50%;
 }
-/* Header */
-.large-header {
-	position: relative;
-	width: 100%;
-	background: #333;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
-	z-index: 1;
+ 50%{
+     background-position: 100% 50%;
+ }
+ 100% {
+     background-position: 0 50%;
+ }
+} 
+
+/*mediaquery jancok */
+
+ @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .textme {
+      width:95%;
+  }
+  .btn.btn-big, .btn.btn-big2  {
+      margin-left: -60px;
+  } 
+   .jancuk {
+     width:100%;
+     
+   }
+  
 }
